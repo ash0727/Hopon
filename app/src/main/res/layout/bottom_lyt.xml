@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/RelativeLayoutSheet"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/btm_curve"
+    android:padding="20dp"
+    app:behavior_hideable="true"
+    app:layout_behavior="@string/bottom_sheet_behavior">
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/txt_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:padding="@dimen/_2sdp"
+                android:text="Share To"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="normal" />
+
+            <ImageView
+                android:id="@+id/img"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:padding="@dimen/_2sdp"
+                android:src="@android:drawable/ic_menu_close_clear_cancel"
+                android:text="Share To"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="normal"
+                android:tint="@color/black"
+                android:visibility="gone" />
+        </RelativeLayout>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:weightSum="4">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/btn"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:height="60dp"
+                    android:background="#fff"
+                    android:drawablePadding="6dp"
+                    android:fontFamily="sans-serif-light"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:gravity="left|center"
+                    android:padding="6dp"
+                    android:src="@drawable/whatsapp"
+                    android:text="Video"
+                    android:textAlignment="center"
+                    android:textColor="#666" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/btn2"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:height="60dp"
+                    android:background="#fff"
+
+                    android:drawablePadding="6dp"
+                    android:fontFamily="sans-serif-light"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:gravity="left|center"
+                    android:padding="6dp"
+                    android:src="@drawable/facebook"
+                    android:text="Video"
+                    android:textAlignment="center"
+                    android:textColor="#666" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/btn3"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:height="60dp"
+                    android:background="#fff"
+                    android:drawablePadding="6dp"
+                    android:fontFamily="sans-serif-light"
+
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:gravity="left|center"
+                    android:padding="6dp"
+                    android:src="@drawable/instagram"
+                    android:text="Video"
+                    android:textAlignment="center"
+                    android:textColor="#666" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/btn4"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:height="60dp"
+                    android:background="#fff"
+                    android:drawablePadding="6dp"
+
+                    android:fontFamily="sans-serif-light"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:gravity="left|center"
+                    android:padding="6dp"
+                    android:src="@drawable/email"
+                    android:text="Video"
+                    android:textAlignment="center"
+                    android:textColor="#666" />
+
+            </LinearLayout>
+
+
+        </TableRow>
+
+    </TableLayout>
+
+
+</LinearLayout>

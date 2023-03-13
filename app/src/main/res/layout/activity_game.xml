@@ -1,0 +1,807 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bgLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.PerformanceCriteria.GameActivity">
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nested_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="10dp"
+        android:background="@color/bg_main"
+        android:clipToPadding="false"
+        android:scrollbars="none"
+        android:scrollingCache="true"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/rl_bg"
+                android:layout_width="match_parent"
+
+                android:layout_height="50dp"
+                android:background="@color/colorPrimary">
+
+                <ImageView
+                    android:id="@+id/img_back"
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:padding="15sp"
+                    android:src="@drawable/back_ionic"
+                    app:tint="@color/white" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_toRightOf="@id/img_back"
+                    android:gravity="center_vertical"
+                    android:text="Games Skills"
+                    android:textColor="@color/white"
+                    android:textSize="20sp" />
+
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentEnd="true"
+                    android:padding="@dimen/_10sdp"
+                    android:src="@drawable/ic_baseline_notifications_none_24"
+                    android:tint="@color/white"
+                    android:visibility="invisible" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_bg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimary"
+                android:orientation="horizontal">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="200dp"
+                    android:clickable="true"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    app:cardBackgroundColor="@android:color/white"
+                    app:cardCornerRadius="@dimen/spacing_middle"
+                    app:cardElevation="3dp"
+                    app:cardUseCompatPadding="true">
+
+                    <RelativeLayout
+                        android:layout_width="130dp"
+                        android:layout_height="190dp"
+                        android:orientation="vertical">
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/profile_image"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="2dp"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/man" />
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_marginStart="@dimen/_80sdp"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/fitness"
+                            android:visibility="gone" />
+
+                        <RelativeLayout
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:layout_below="@id/profile_image"
+                            android:layout_centerHorizontal="true"
+
+                            android:padding="10dp">
+
+                            <TextView
+                                android:id="@+id/overall_grade"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:text="-"
+                                android:textAlignment="center"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                                android:textColor="@color/grey_90"
+                                android:textSize="14sp"
+                                app:fontFamily="sans-serif-medium" />
+
+                            <ProgressBar
+                                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:indeterminate="false"
+                                android:max="100"
+                                android:progress="80"
+                                android:progressDrawable="@drawable/circular_progress_bar_blue" />
+
+                        </RelativeLayout>
+
+
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+
+                    <TextView
+                        android:id="@+id/name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:padding="@dimen/_2sdp"
+                        android:text="Hi Anderson Jackson"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/st_code"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:padding="@dimen/_2sdp"
+                        android:text="About Your Game Skills"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="10dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/sport"
+
+                        />
+
+                </LinearLayout>
+            </LinearLayout>
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="20sp"
+
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:layout_marginBottom="20sp"
+                android:background="@color/white"
+                android:orientation="vertical"
+                app:cardCornerRadius="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:background="@color/white"
+                    android:orientation="vertical"
+                    android:padding="@dimen/_10sdp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="50dp"
+                            android:layout_marginStart="5dp"
+                            android:gravity="center_vertical"
+                            android:text="Games Skills"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1" />
+
+                        <LinearLayout
+                            android:id="@+id/ll_pdf"
+                            android:layout_width="60dp"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:visibility="gone">
+
+                            <ImageView
+                                android:id="@+id/report"
+                                android:layout_width="match_parent"
+                                android:layout_height="32dp"
+                                android:layout_gravity="center"
+                                app:srcCompat="@drawable/pdf" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_vertical"
+                                android:text="Report"
+                                android:textAlignment="center"
+                                android:textColor="@color/black"
+                                android:textSize="12dp"
+                                android:textStyle="normal" />
+
+                        </LinearLayout>
+
+
+                        <RelativeLayout
+                            android:layout_width="@dimen/_50sdp"
+                            android:layout_height="@dimen/_50sdp"
+                            android:layout_below="@id/img_subji"
+                            android:layout_marginEnd="@dimen/_10sdp"
+                            android:layout_centerHorizontal="true"
+
+                            >
+
+                            <TextView
+                                android:id="@+id/grade_over"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:padding="2dp"
+                                android:text="-"
+                                android:textAlignment="center"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                                android:textColor="@color/grey_90"
+                                android:textSize="12sp"
+                                app:fontFamily="sans-serif-medium" />
+
+                            <ProgressBar
+                                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:indeterminate="false"
+                                android:max="100"
+                                android:progress="80"
+                                android:progressDrawable="@drawable/circular_progress_bar_blue" />
+
+                        </RelativeLayout>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_attention_to"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:background="@drawable/edit_text_bg"
+                        android:orientation="horizontal"
+                        android:padding="@dimen/_10sdp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="50dp"
+                            android:gravity="center_vertical"
+                            android:text="Attention To Basics"
+                            android:textColor="@color/grey_40"
+                            android:textSize="15sp"
+                            android:textStyle="bold" />
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1" />
+
+                        <ImageView
+                            android:id="@+id/video_prime1"
+                            android:layout_width="@dimen/_40sdp"
+                            android:layout_height="@dimen/_50sdp"
+                            android:layout_marginEnd="5dp"
+                            android:padding="2dp"
+                            android:visibility="gone"
+                            app:srcCompat="@drawable/ic_baseline_videocam_24"
+                            app:tint="@color/colorPrimary" />
+
+                        <ImageView
+                            android:id="@+id/img_card_1"
+                            android:layout_width="@dimen/_50sdp"
+                            android:layout_height="@dimen/_50sdp"
+                            android:padding="3dp"
+                            android:src="@drawable/ic_baseline_image_24"
+                            android:visibility="gone" />
+
+
+                        <RelativeLayout
+                            android:layout_width="@dimen/_50sdp"
+                            android:layout_height="@dimen/_50sdp"
+                            android:layout_below="@id/img_subji"
+                            android:layout_centerHorizontal="true"
+
+                            >
+
+                            <TextView
+                                android:id="@+id/attention_to_basics"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:padding="2dp"
+                                android:text="-"
+                                android:textAlignment="center"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                                android:textColor="@color/grey_90"
+                                android:textSize="12sp"
+                                app:fontFamily="sans-serif-medium" />
+
+                            <ProgressBar
+                                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:indeterminate="false"
+                                android:max="100"
+                                android:progress="80"
+                                android:progressDrawable="@drawable/circular_progress_bar_blue" />
+
+                        </RelativeLayout>
+
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:id="@+id/ll_rules_game"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        android:background="@drawable/edit_text_bg"
+                        android:orientation="vertical"
+                        android:padding="@dimen/_10sdp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="50dp"
+                                android:gravity="center_vertical"
+                                android:text="Rules of the games"
+                                android:textColor="@color/grey_40"
+                                android:textSize="15sp"
+                                android:textStyle="bold" />
+
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1" />
+
+                            <ImageView
+                                android:layout_width="@dimen/_40sdp"
+                                android:layout_height="@dimen/_50sdp"
+                                android:layout_marginEnd="5dp"
+                                android:padding="2dp"
+                                android:visibility="gone"
+                                app:srcCompat="@drawable/ic_baseline_videocam_24"
+                                app:tint="@color/colorPrimary" />
+
+                            <ImageView
+                                android:id="@+id/img_card_2"
+                                android:layout_width="@dimen/_50sdp"
+                                android:layout_height="@dimen/_50sdp"
+                                android:padding="3dp"
+                                android:src="@drawable/ic_baseline_image_24"
+                                android:visibility="gone" />
+
+                            <ImageView
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:padding="5dp"
+                                android:visibility="gone"
+                                app:srcCompat="@drawable/pdf" />
+
+                            <RelativeLayout
+                                android:layout_width="@dimen/_50sdp"
+                                android:layout_height="@dimen/_50sdp"
+                                android:layout_below="@id/img_subji"
+                                android:layout_centerHorizontal="true"
+
+                                >
+
+                                <TextView
+                                    android:id="@+id/rules"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerInParent="true"
+                                    android:padding="2dp"
+                                    android:text="-"
+                                    android:textAlignment="center"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                                    android:textColor="@color/grey_90"
+                                    android:textSize="12sp"
+                                    app:fontFamily="sans-serif-medium" />
+
+                                <ProgressBar
+                                    style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:indeterminate="false"
+                                    android:max="100"
+                                    android:progress="80"
+                                    android:progressDrawable="@drawable/circular_progress_bar_blue" />
+
+                            </RelativeLayout>
+
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_team_tactics"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/edit_text_bg"
+                        android:orientation="vertical"
+                        android:padding="@dimen/_10sdp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="50dp"
+                                android:gravity="center_vertical"
+                                android:text="Individual/Team Tactics"
+                                android:textColor="@color/grey_40"
+                                android:textSize="15sp"
+                                android:textStyle="bold" />
+
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1" />
+
+                            <ImageView
+                                android:id="@+id/tactics_media_v"
+                                android:layout_width="@dimen/_40sdp"
+                                android:layout_height="@dimen/_50sdp"
+                                android:layout_marginEnd="5dp"
+                                android:padding="2dp"
+                                android:visibility="gone"
+                                app:srcCompat="@drawable/ic_grey_videocam_24" />
+
+                            <ImageView
+                                android:id="@+id/img_card_3"
+                                android:layout_width="@dimen/_50sdp"
+                                android:layout_height="@dimen/_50sdp"
+                                android:padding="3dp"
+                                android:src="@drawable/ic_baseline_image_24"
+                                android:visibility="gone" />
+
+                            <ImageView
+                                android:id="@+id/tactics_media_p"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:padding="5dp"
+                                android:visibility="gone"
+
+                                app:srcCompat="@drawable/pdf" />
+
+                            <RelativeLayout
+                                android:layout_width="@dimen/_50sdp"
+                                android:layout_height="@dimen/_50sdp"
+                                android:layout_below="@id/img_subji"
+                                android:layout_centerHorizontal="true"
+
+                                >
+
+                                <TextView
+                                    android:id="@+id/tactics"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerInParent="true"
+                                    android:padding="2dp"
+                                    android:text="-"
+                                    android:textAlignment="center"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                                    android:textColor="@color/grey_90"
+                                    android:textSize="12sp"
+                                    app:fontFamily="sans-serif-medium" />
+
+                                <ProgressBar
+                                    style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:indeterminate="false"
+                                    android:max="100"
+                                    android:progress="80"
+                                    android:progressDrawable="@drawable/circular_progress_bar_blue" />
+
+                            </RelativeLayout>
+
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:id="@+id/ll_team_play"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:background="@drawable/edit_text_bg"
+                        android:orientation="vertical"
+                        android:padding="@dimen/_10sdp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="50dp"
+                                android:gravity="center_vertical"
+                                android:text="Team Play"
+                                android:textColor="@color/grey_40"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1" />
+
+                            <ImageView
+                                android:id="@+id/team_player_media_p"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:padding="5dp"
+                                android:visibility="gone"
+                                app:srcCompat="@drawable/pdf" />
+
+                            <ImageView
+                                android:id="@+id/team_player_media_v"
+                                android:layout_width="@dimen/_40sdp"
+                                android:layout_height="@dimen/_50sdp"
+                                android:layout_marginEnd="5dp"
+                                android:padding="2dp"
+                                android:visibility="gone"
+                                app:srcCompat="@drawable/ic_grey_videocam_24" />
+
+                            <ImageView
+                                android:id="@+id/img_card_4"
+                                android:layout_width="@dimen/_50sdp"
+                                android:layout_height="@dimen/_50sdp"
+                                android:padding="3dp"
+                                android:src="@drawable/ic_baseline_image_24"
+                                android:visibility="gone" />
+
+                            <RelativeLayout
+                                android:layout_width="@dimen/_50sdp"
+                                android:layout_height="@dimen/_50sdp"
+                                android:layout_below="@id/img_subji"
+                                android:layout_centerHorizontal="true"
+
+                                >
+
+                                <TextView
+                                    android:id="@+id/team_player"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerInParent="true"
+                                    android:padding="2dp"
+                                    android:text="-"
+                                    android:textAlignment="center"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                                    android:textColor="@color/grey_90"
+                                    android:textSize="12sp"
+                                    app:fontFamily="sans-serif-medium" />
+
+                                <ProgressBar
+                                    style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:indeterminate="false"
+                                    android:max="100"
+                                    android:progress="80"
+                                    android:progressDrawable="@drawable/circular_progress_bar_blue" />
+
+                            </RelativeLayout>
+
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:id="@+id/ll_advance_skill"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:background="@drawable/edit_text_bg"
+                            android:orientation="vertical"
+                            android:padding="@dimen/_10sdp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="50dp"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="50dp"
+                                    android:gravity="center_vertical"
+                                    android:text="Advance Skills"
+                                    android:textColor="@color/grey_40"
+                                    android:textSize="16sp"
+                                    android:textStyle="bold" />
+
+                                <View
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1" />
+
+                                <ImageView
+                                    android:id="@+id/advance_skill_media_p"
+                                    android:layout_width="50dp"
+                                    android:layout_height="50dp"
+                                    android:padding="5dp"
+                                    android:visibility="gone"
+                                    app:srcCompat="@drawable/pdf" />
+
+                                <ImageView
+                                    android:id="@+id/advance_skill_media_v"
+                                    android:layout_width="40dp"
+                                    android:layout_height="50dp"
+                                    android:layout_marginEnd="5dp"
+                                    android:padding="2dp"
+                                    android:src="@drawable/ic_baseline_videocam_24"
+                                    android:visibility="gone" />
+
+                                <ImageView
+                                    android:id="@+id/img_card_5"
+                                    android:layout_width="@dimen/_50sdp"
+                                    android:layout_height="@dimen/_50sdp"
+                                    android:padding="3dp"
+                                    android:src="@drawable/ic_baseline_image_24"
+                                    android:visibility="gone" />
+
+                                <RelativeLayout
+                                    android:layout_width="@dimen/_50sdp"
+                                    android:layout_height="@dimen/_50sdp"
+                                    android:layout_below="@id/img_subji"
+                                    android:layout_centerHorizontal="true"
+
+                                    >
+
+                                    <TextView
+                                        android:id="@+id/advance_skill"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerInParent="true"
+                                        android:padding="2dp"
+                                        android:text="-"
+                                        android:textAlignment="center"
+                                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                                        android:textColor="@color/grey_90"
+                                        android:textSize="12sp"
+                                        app:fontFamily="sans-serif-medium" />
+
+                                    <ProgressBar
+                                        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:indeterminate="false"
+                                        android:max="100"
+                                        android:progress="80"
+                                        android:progressDrawable="@drawable/circular_progress_bar_blue" />
+
+                                </RelativeLayout>
+
+
+                            </LinearLayout>
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/spacing_large"
+                                android:gravity="center_vertical"
+                                android:orientation="vertical"
+                                android:visibility="gone">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="@dimen/_10sdp"
+                                    android:paddingBottom="@dimen/_10sdp"
+                                    android:text="Vo2 Max"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                                    android:textColor="@color/grey_40"
+                                    android:textSize="15sp" />
+
+                                <ProgressBar
+                                    style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/spacing_middle"
+                                    android:layout_marginLeft="@dimen/spacing_middle"
+                                    android:layout_marginTop="1dp"
+                                    android:layout_marginRight="@dimen/spacing_middle"
+                                    android:layout_weight="1"
+                                    android:indeterminate="false"
+                                    android:max="100"
+                                    android:progress="80"
+                                    android:progressDrawable="@drawable/progressbar_orange_round" />
+
+
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+
+                    <!--add 4th one -->
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+            <!--Second Card Row-->
+            <!--Third Card Row-->
+
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/myFAB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|right"
+        android:layout_margin="20dp"
+        android:backgroundTint="@color/colorPrimary"
+        android:src="@drawable/img"
+        android:tint="@color/white"
+        android:visibility="gone"
+        app:backgroundTint="@color/colorPrimary"
+        app:borderWidth="0dp"
+        app:elevation="8dp"
+        app:layout_anchorGravity="bottom|right|end" />
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
+

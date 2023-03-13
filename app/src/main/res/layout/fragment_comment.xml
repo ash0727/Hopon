@@ -1,0 +1,111 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/comment_screen"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey_20"
+    android:clickable="true"
+    android:fitsSystemWindows="true">
+
+    <androidx.percentlayout.widget.PercentRelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/d_top_left_right_radius"
+            app:layout_heightPercent="75%">
+
+            <RelativeLayout
+                android:id="@+id/top_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/Goback"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_margin="5dp"
+                    android:padding="5dp"
+                    android:src="@drawable/ic_cross_white"
+                    app:tint="@color/black" />
+
+                <TextView
+                    android:id="@+id/comment_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp15"
+                    android:layout_marginTop="12dp"
+                    android:text="0 comments"
+                    android:textColor="@color/black"
+                    android:textSize="15dp" />
+
+            </RelativeLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recylerview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:listitem="@layout/item_comment_layout"
+                android:layout_above="@+id/write_layout"
+                android:layout_below="@+id/top_layout" />
+
+
+            <RelativeLayout
+                android:id="@+id/write_layout"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_alignParentBottom="true"
+                android:layout_margin="@dimen/dp10"
+                android:layout_marginBottom="@dimen/_50sdp"
+                android:background="@drawable/round_edit"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp">
+
+                <EditText
+                    android:id="@+id/message_edit"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_toLeftOf="@+id/send_btn_layout"
+                    android:backgroundTint="@color/transparent"
+                    android:hint="Leave a comment..."
+                    android:padding="@dimen/dp10"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/grey_20"
+                    android:textSize="14dp" />
+
+                <RelativeLayout
+                    android:id="@+id/send_btn_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true">
+
+                    <ImageButton
+                        android:id="@+id/send_btn"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:background="@color/transparent"
+                        android:padding="4dp"
+                        android:rotation="-45"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/ic_send" />
+
+                    <ProgressBar
+                        android:id="@+id/send_progress"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:padding="5dp"
+                        android:visibility="gone" />
+
+                </RelativeLayout>
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </androidx.percentlayout.widget.PercentRelativeLayout>
+</FrameLayout>

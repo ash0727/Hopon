@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group
+        android:id="@+id/grp_1"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_user"
+
+            android:title="Profile" />
+        <item
+            android:id="@+id/nav_about"
+
+            android:title="About Us" />
+        <item
+            android:id="@+id/nav_contact"
+
+            android:title="Contact Us" />
+        <item
+            android:id="@+id/rate_us"
+            android:title="Rate Us" />
+        <item
+            android:id="@+id/nav_tc_c"
+            android:title="Terms and conditions" />
+    </group>
+    <group
+        android:id="@+id/grp_2"
+        android:checkableBehavior="none">
+        <item
+            android:id="@+id/nav_help"
+            android:title="Logout" />
+    </group>
+
+</menu>

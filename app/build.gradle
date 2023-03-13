@@ -1,0 +1,95 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.google.gms.google-services'
+repositories {
+    maven { url 'https://jitpack.io' }
+}
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.2"
+
+    defaultConfig {
+        applicationId "com.shape.app"
+        minSdkVersion 21
+        targetSdkVersion 30
+        versionCode 5
+        versionName "1.4"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    lintOptions {
+        checkReleaseBuilds false
+    }
+    aaptOptions {
+        cruncherEnabled = false
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'com.google.android.material:material:1.3.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    testImplementation 'junit:junit:4.+'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+    implementation 'com.android.volley:volley:1.1.1'
+
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+    implementation 'com.chaos.view:pinview:1.4.4'
+
+    debugImplementation 'com.amitshekhar.android:debug-db:1.0.6'
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+    implementation "androidx.percentlayout:percentlayout:1.0.0"
+
+    implementation 'com.google.android.exoplayer:exoplayer-core:2.11.7'
+    implementation 'com.google.android.exoplayer:exoplayer-dash:2.10.5'
+    implementation 'com.google.android.exoplayer:exoplayer-ui:2.10.5'
+    implementation 'com.google.android.exoplayer:exoplayer:2.7.3'
+
+    implementation 'es.voghdev.pdfviewpager:library:1.1.2'
+
+    implementation 'com.google.android.exoplayer:exoplayer-core:2.11.7'
+    implementation 'com.google.android.exoplayer:exoplayer-dash:2.11.7'
+    implementation 'com.google.android.exoplayer:exoplayer-ui:2.11.7'
+    implementation 'com.google.android.exoplayer:exoplayer:2.11.7'
+
+    implementation 'com.jsibbold:zoomage:1.3.1'
+    implementation 'com.dinuscxj:ellipsizetextview:1.0.5'
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
+    implementation 'com.google.code.gson:gson:2.8.2'
+    implementation 'org.jsoup:jsoup:1.8.1'
+    def lottieVersion = "3.4.0"
+    implementation "com.airbnb.android:lottie:$lottieVersion"
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+
+    implementation platform('com.google.firebase:firebase-bom:28.0.1')
+    implementation 'com.google.firebase:firebase-analytics'
+
+
+    // Declare the dependencies for the Firebase Cloud Messaging and Analytics libraries
+    // When using the BoM, you don't specify versions in Firebase library dependencies
+    implementation 'com.google.firebase:firebase-messaging'
+
+    implementation 'com.karumi:dexter:6.2.2'
+    implementation 'com.theartofdev.edmodo:android-image-cropper:2.8.+'
+
+}
