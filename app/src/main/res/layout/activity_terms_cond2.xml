@@ -3,8 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
+    android:layout_height="match_parent"
+    tools:context=".TermsCond">
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/toolbr"
         android:layout_width="match_parent"
@@ -32,8 +32,7 @@
                 android:layout_height="match_parent"
                 android:layout_gravity="center_vertical"
                 android:gravity="center_vertical"
-                android:text="@string/app_name"
-
+                android:text="Terms and Conditions"
                 android:textAlignment="textStart"
                 android:textColor="@color/white"
                 android:textSize="20dp"
@@ -56,6 +55,7 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
+
     <WebView
         android:id="@+id/webViewTerms"
         android:layout_width="match_parent"
@@ -69,45 +69,43 @@
         android:layout_below="@+id/toolbr"
         android:layout_height="wrap_content">
 
-        <LinearLayout
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/ll_view"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <TextView
+            style="@style/abt_txt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/ll_view"
-            android:orientation="vertical"
-            android:padding="10dp">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                style="@style/abt_txt"
-                android:text="@string/para_one" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                style="@style/abt_txt"
-                android:text="@string/para_two" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                style="@style/abt_txt"
-                android:layout_marginTop="10dp"
-                android:text="@string/para_three" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                style="@style/abt_txt"
-                android:layout_marginTop="10dp"
-                android:text="@string/para_four" />
-
-        </LinearLayout>
+            android:text="@string/para_one" />
+    </LinearLayout>
     </ScrollView>
+    <CheckBox
+        android:id="@+id/checkboxterms"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal"
+        android:hint="I agree"
+        android:textSize="20dp"
+        android:textColorHint="@color/black"
+
+        android:layout_marginTop="50dp"
+        android:layout_alignBottom="@id/btn"
+        android:layout_marginBottom="100dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/textterms"/>
 
     <Button
-        android:id="@+id/btnterms"
+        android:id="@+id/btn"
         android:layout_width="180dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -116,6 +114,6 @@
         android:layout_marginTop="20dp"
         android:layout_marginBottom="@dimen/_50sdp"
         android:text="Continue"
-        android:visibility="gone"
         android:textColor="@android:color/white" />
+
 </RelativeLayout>

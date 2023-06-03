@@ -1,8 +1,13 @@
-package com.shape.app.Activity;
+package com.shape.app;
+
+import static com.shape.app.Forms.Login.SHARED_PREFERENCES_NAME;
+import static com.shape.app.Forms.Login.THEME_COLOR;
+import static com.shape.app.Forms.Login.USER_ID;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Build;
@@ -13,6 +18,8 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.webkit.WebView;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -23,8 +30,13 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.bumptech.glide.Glide;
+import com.shape.app.Activity.About_Us;
+import com.shape.app.Activity.MainActivity;
+import com.shape.app.Activity.WelcomeScreen;
+import com.shape.app.Forms.Login;
+import com.shape.app.Fragment.HomeFragment;
 import com.shape.app.Helper.Constant;
-import com.shape.app.R;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -32,24 +44,47 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
-import static com.shape.app.Forms.Login.SHARED_PREFERENCES_NAME;
-import static com.shape.app.Forms.Login.THEME_COLOR;
-import static com.shape.app.Forms.Login.USER_ID;
-
-public class About_Us extends AppCompatActivity {
+public class TermsCond extends AppCompatActivity {
+    Button btn;
     WebView webViewTerms;
+    CheckBox checkBox;
+    TextView textView;
     ProgressDialog progressDialog;
     SharedPreferences sharedPreferences;
     Button btnterms;
     String str_userid, str_name, str_fname, str_theme;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_about__us);
+        setContentView(R.layout.activity_terms_cond2);
+        textView = findViewById(R.id.textterms);
+        btn = findViewById(R.id.btn);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (checkBox.isChecked()) {
+                    Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                    startActivity(intent);
+                    finish();
+                }
+                else{
+//                    textView.setText("Please agree Terms and Condition");
+                    Toast.makeText(TermsCond.this, "Please agree Terms and Condition", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+        findViewById(R.id.bt_menu).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), Login.class);
+                startActivity(intent);
+                finish();
+            }
+        });
         sharedPreferences = getSharedPreferences(SHARED_PREFERENCES_NAME, MODE_PRIVATE);
         str_userid = sharedPreferences.getString(USER_ID, "");
         str_theme = sharedPreferences.getString(THEME_COLOR, "");
+        checkBox = findViewById(R.id.checkboxterms);
 
         if (!str_theme.equals("")) {
             setStatusBarColor(str_theme);
@@ -59,12 +94,6 @@ public class About_Us extends AppCompatActivity {
 
 
         str_fname = getIntent().getStringExtra("flag");
-        findViewById(R.id.bt_menu).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                onBackPressed();
-            }
-        });
         findViewById(R.id.ll_view).setVisibility(View.VISIBLE);
         btnterms=findViewById(R.id.btnterms);
         webViewTerms = findViewById(R.id.webViewTerms);
@@ -77,7 +106,6 @@ public class About_Us extends AppCompatActivity {
             getAppData("1");
         } else if ((str_fname.equals("2"))) {
             webViewTerms.setVisibility(View.VISIBLE);
-            btnterms.setVisibility(View.GONE);
             findViewById(R.id.ll_view).setVisibility(View.GONE);
             ((TextView) findViewById(R.id.toolbr_lbl)).setText("Terms and Conditions");
             getAppData("2");
@@ -86,7 +114,7 @@ public class About_Us extends AppCompatActivity {
     }
 
     private void getAppData(String flag_i) {
-        final ProgressDialog progressDialog = new ProgressDialog(About_Us.this);
+        final ProgressDialog progressDialog = new ProgressDialog(TermsCond.this);
         progressDialog.setCancelable(false);
         progressDialog.setMessage("Loading..");
         progressDialog.show();
@@ -134,7 +162,7 @@ public class About_Us extends AppCompatActivity {
             @Override
             public void onErrorResponse(VolleyError error) {
                 progressDialog.dismiss();
-                Toast.makeText(About_Us.this, "Something went wrong", Toast.LENGTH_LONG).show();
+                Toast.makeText(TermsCond.this, "Something went wrong", Toast.LENGTH_LONG).show();
 
             }
         }) {
@@ -181,4 +209,7 @@ public class About_Us extends AppCompatActivity {
         * */
     }
 
+
 }
+
+

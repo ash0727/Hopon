@@ -52,6 +52,7 @@
         <activity android:name=".Activity.PerformanceCriteria.GameActivity" />
         <activity android:name=".Activity.PerformanceCriteria.FitnessActivity" />
         <activity android:name=".Activity.EventDetails" />
+        <activity android:name=".TermsCond" />
         <activity android:name=".Activity.FeedDetails" />
         <activity android:name=".Activity.AppointmentDetails" />
         <activity android:name=".Activity.GraphDetails" />
@@ -59,7 +60,6 @@
         <activity android:name=".SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -74,15 +74,12 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/file_paths" />
         </provider>
-
         <activity
             android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
             android:theme="@style/Base.Theme.AppCompat" />
-
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_icon"
             android:resource="@drawable/logo" />
-
         <service
             android:name=".Helper.MyFirebaseMessagingService"
             android:exported="false">
@@ -91,5 +88,4 @@
             </intent-filter>
         </service>
     </application>
-
 </manifest>

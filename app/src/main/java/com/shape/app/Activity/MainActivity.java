@@ -24,6 +24,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -76,6 +77,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
     private ActionBar actionBar;
     private Toolbar toolbar;
     ImageButton bt_menu, bt_profile;
+    Button btnterms;
     boolean doubleBackToExitPressedOnce = false;
     LinearLayout main_ll;
     ImageView profile_image, image;
@@ -142,6 +144,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         View hView = nav_view.getHeaderView(0);
         //TextView nav_user = (TextView)hView.findViewById(R.id.nav_name);
         image = hView.findViewById(R.id.image);
+        btnterms=findViewById(R.id.btnterms);
         Glide.with(getApplicationContext()).load(str_logo).into(image);
 
         nav_view.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {

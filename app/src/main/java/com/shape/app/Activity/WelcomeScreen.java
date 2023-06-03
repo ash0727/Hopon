@@ -1,9 +1,7 @@
 package com.shape.app.Activity;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
@@ -19,6 +17,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.shape.app.Forms.Login;
 import com.shape.app.R;
+import com.shape.app.TermsCond;
 
 import static com.shape.app.Forms.Login.FNAME;
 import static com.shape.app.Forms.Login.LNAME;
@@ -28,7 +27,7 @@ import static com.shape.app.Forms.Login.THEME_COLOR;
 import static com.shape.app.Forms.Login.USER_ID;
 
 public class WelcomeScreen extends AppCompatActivity {
-    Button btn;
+    Button btn,btnterms;
     TextView txt_name;
     TextView tv_level, tv_username, tv_follower, tv_following, tv_email;
     SharedPreferences sharedPreferences;
@@ -43,6 +42,7 @@ public class WelcomeScreen extends AppCompatActivity {
         setContentView(R.layout.activity_welcome_screen);
         SherfPrefes();
         btn = findViewById(R.id.btn);
+        btnterms=findViewById(R.id.btnterms);
         txt_name = findViewById(R.id.name);
         image = findViewById(R.id.image);
         txt_name.setText(str_fname + " " + str_lname);
@@ -56,9 +56,13 @@ public class WelcomeScreen extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+//                Intent intent = new Intent(getApplicationContext(), TermsCond.class);
+//                intent.putExtra("flag", "2");
+//
+//                startActivity(intent);
+                Intent intent = new Intent(getApplicationContext(), TermsCond.class);
+                intent.putExtra("flag", "2");
                 startActivity(intent);
-                finish();
             }
         });
     }
